@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familiares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .familiar {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .familiar:last-child {
+            border-bottom: none;
+        }
+
+        .familiar p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lista de Familiares</h1>
+        {% for familiar in familiares %}
+        <div class="familiar">
+            <p><strong>Nombre:</strong> {{ familiar.nombre }}</p>
+            <p><strong>Apellido:</strong> {{ familiar.apellido }}</p>
+            <p><strong>Edad:</strong> {{ familiar.edad }} años</p>
+            <p><strong>Fecha de Nacimiento:</strong> {{ familiar.fecha_nacimiento|date:"d-m-Y" }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
